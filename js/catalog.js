@@ -1,6 +1,6 @@
 const cardContainer = document.getElementById('joke-cards');
 
-fetch("https://v2.jokeapi.dev/joke/Programming?lang=es&amount=10")
+fetch("https://v2.jokeapi.dev/joke/Any?lang=en&amount=10")
     .then(res => res.json())
     .then(data => {
         const amount = data.amount;
