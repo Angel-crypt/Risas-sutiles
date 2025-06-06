@@ -1,24 +1,30 @@
+const cardContainer = document.getElementById('joke-cards');
+
 fetch("https://v2.jokeapi.dev/joke/Programming?lang=es&amount=10")
     .then(res => res.json())
     .then(data => {
-        amount = data.amount
+        const amount = data.amount;
+
         for (let i = 0; i < amount; i++) {
-            let type = data.jokes[i].type
-            switch (type) {
+            const joke = data.jokes[i];
+            const card = document.createElement('div');
+            card.classList.add('joke-card');
+
+            let content = '';
+
+            switch (joke.type) {
                 case 'twopart':
-                    console.log(data.jokes[i].type)
-                    console.log(data.jokes[i].setup)
-                    console.log(data.jokes[i].delivery)
+                    content = `<p>${joke.setup}</p><p>${joke.delivery}</p>`;
                     break;
-
                 case 'single':
-                    console.log(data.jokes[i].joke)
+                    content = `<p>${joke.joke}</p>`;
                     break;
-
                 default:
-                    break;
+                    content = `<p>Tipo desconocido de chiste.</p>`;
             }
 
+            card.innerHTML = content;
+            cardContainer.appendChild(card);
         }
     })
-    .catch(error => alert(error))
+    .catch(error => alert("Error al obtener chistes: " + error));
