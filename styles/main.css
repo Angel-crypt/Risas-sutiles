@@ -8,6 +8,9 @@
     --color-text: #111111;
     --color-muted: #8A8A8A;
     --color-border: #B5AD9B;
+    --color-correct: #1a7932;
+    --color-incorrect: #6b1212;
+    --color-warning: #8d7d1f;
 
     /* Contraste  */
     --color-bg-d: #D4C3AA;
@@ -15,6 +18,9 @@
     --color-primary-d: #06080A;
     --color-secondary-d: #15191D;
     --color-accent-d: #3A271D;
+    --color-correct-d: #005716;
+    --color-incorrect-d: #3a0000;
+    --color-warning-d: #695602;
 
     /* Otros */
     --border-radius: 0.75rem;

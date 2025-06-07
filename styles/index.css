@@ -19,7 +19,6 @@ body {
     padding-right: 20px;
 
     display: flex;
-    /*flex-direction: row-reverse; */
     flex-direction: row;
     align-items: center;
 }
@@ -37,19 +36,38 @@ body {
     align-items: center;
 }
 
-.container-video {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-}
-
 .form {
     box-sizing: border-box;
+    height: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+}
+
+h2 {
+    font-family: var(--font-family);
+    color: var(--color-primary);
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.form-content {
+    margin-top: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-data {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
 }
 
 .input-form {
@@ -59,7 +77,80 @@ body {
     justify-content: space-between;
 }
 
+.input-form label {
+    font-family: var(--font-family);
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input-form input {
+    padding: 3px 4px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: var(--color-bg);
+    width: 100%;
+}
+
+.input-form input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 3px 3px 0 3px rgba(var(--color-primary-rgb), 0.1);
+    background-color: white;
+}
+
+#submit-btn {
+    width: 80%;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-surface);
+}
+
+.container-video {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
 video {
     width: 100%;
     height: auto;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: var(--color-secondary);
+}
+
+.toggle-password svg {
+    width: 20px;
+    height: 20px;
 }

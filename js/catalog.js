@@ -1,3 +1,8 @@
+// Redirección si no ha iniciado sesión
+if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+    window.location.href = '../index.html';
+}
+
 const cardContainer = document.getElementById('joke-cards');
 
 fetch("https://v2.jokeapi.dev/joke/Any?lang=en&amount=10")

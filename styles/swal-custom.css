@@ -1,0 +1,74 @@
+/* Estilos personalizados para SweetAlert2 */
+.swal2-popup.custom-swal {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  border-radius: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.swal2-title.custom-title {
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.swal2-html-container.custom-text {
+  font-size: 1rem;
+  color: var(--color-muted);
+}
+
+/* Alertas success */
+.swal2-icon.swal2-success {
+  color: var(--color-correct);
+  border-color: var(--color-correct);
+}
+
+.swal2-confirm.custom-success {
+  background-color: var(--color-correct);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.swal2-confirm.custom-success:hover {
+  background-color: var(--color-correct-d);
+}
+
+/* Alertas error */
+.swal2-icon.swal2-error {
+  color: var(--color-incorrect);
+}
+
+.swal2-cancel.custom-error {
+  background-color: var(--color-incorrect);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.swal2-cancel.custom-error:hover {
+  background-color: var(--color-incorrect-d);
+}
+
+/* Alertas warning */
+.swal2-icon.swal2-warning {
+  color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+
+.swal2-confirm.custom-warning-confirm {
+  background-color: var(--color-warning);
+  color: var(--color-bg);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  border: none;
+}
+
+.swal2-confirm.custom-warning-confirm:hover {
+  background-color: var(--color-warning-d);
+}

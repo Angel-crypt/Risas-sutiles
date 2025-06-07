@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Risas sutiles</title>
+    <title>Acceso - Risas sutiles</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/swal-custom.css">
 </head>
 
 <body>
@@ -18,25 +19,36 @@
                     <button id="login-btn" class="disabled" disabled>Inicio de Sesión</button>
                     <button id="signup-btn" class="active">Crea tu cuenta</button>
                 </div>
-                <h2 id="form-title">Bienvenido de Vuelta</h2>
-                <form>
-                    <div class="input-form">
-                        <label for="name">Nombre de Usuario</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="input-form">
-                        <label for="password">Contraseña</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <button type="submit" id="submit-btn">Iniciar Sesión</button>
-                </form>
+                <div class="form-content">
+                    <h2 id="form-title">Bienvenido de Vuelta</h2>
+                    <form class="form-data">
+                        <div class="input-form">
+                            <label for="name">Nombre de Usuario</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="input-form">
+                            <label for="password">Contraseña</label>
+                            <div class="password-container">
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" class="toggle-password" aria-label="Mostrar/Ocultar contraseña">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" id="submit-btn">Iniciar Sesión</button>
+                    </form>
+                </div>
             </div>
         </aside>
         <aside class="container-video">
-            <video class="video" src="../static/videos/2y6IStjTS36NqWWpcsTnmtsDe7d.mp4" autoplay="true"
+            <video class="video" src="../static/videos/1.mp4" autoplay="true"
                 loop="true"></video>
         </aside>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./js/index.js"></script>
 </html>
