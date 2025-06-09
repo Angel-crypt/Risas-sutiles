@@ -228,24 +228,3 @@ input[type="checkbox"] {
 .clear-button:hover {
     background: var(--color-accent);
 }
-
-.logout-button {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: var(--color-accent);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-}
-
-.logout-button:hover {
-    background-color: var(--color-accent-d);
-    transform: scale(1.05);
-}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Chiste</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/swal-custom.css">
+    <link rel="stylesheet" href="../styles/detail.css">
+</head>
+<button class="logout-button" onclick="logout()" title="Cerrar sesión">
+    🚪
+</button>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="breadcrumb">
+                <a href="/pages/catalog.html">← Volver a búsqueda</a> / Detalle del chiste
+            </div>
+            <div class="joke-id" id="jokeId"></div>
+            <div class="joke-type">
+                Tipo: <span class="type-badge" id="jokeType"></span>
+            </div>
+        </div>
+
+        <!-- Joke Content -->
+        <div class="joke-content" id="trigger">
+            <div class="joke-text" id="jokeText">
+                <div class="loading">Cargando chiste...</div>
+            </div>
+        </div>
+
+        <div id="scream">
+            <img src="../static/imgs/download-2.png" alt="Scream">
+        </div>
+
+        <!-- Metadata -->
+        <div class="metadata">
+            <div class="metadata-header">Información del Chiste</div>
+            <div class="metadata-content">
+                <div class="metadata-row">
+                    <div class="metadata-label">Categoría:</div>
+                    <div class="metadata-value">
+                        <div class="tag-list" id="categories">
+                            <span class="tag category"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="metadata-row">
+                    <div class="metadata-label">Idioma:</div>
+                    <div class="metadata-value">
+                        <span class="tag language" id="language"></span>
+                    </div>
+                </div>
+                <div class="metadata-row">
+                    <div class="metadata-label">Flags:</div>
+                    <div class="metadata-value">
+                        <div class="tag-list" id="flags">
+                            <span class="tag"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/detail.js"></script>
+<script src="../js/main.js"></script>
+</html>

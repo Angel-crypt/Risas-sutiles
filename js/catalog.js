@@ -3,21 +3,28 @@ if (sessionStorage.getItem('isLoggedIn') !== 'true') {
     window.location.href = '../index.html';
 }
 
+// Ir a la vista detallada del chiste
+function goToJoke(joke) {
+    sessionStorage.setItem("currentJoke", JSON.stringify(joke));
+    window.location.href = `detail.html`;
+}
+
 function fetchAndRenderJokes(url) {
     fetch(url)
         .then(res => res.json())
         .then(data => {
             const cardContainer = document.getElementById('joke-cards');
-            cardContainer.innerHTML = ''; // Limpiar resultados anteriores
+            cardContainer.innerHTML = '';
 
-            const jokes = data.jokes || [data]; // Asegura que funcione con amount=1
+            const jokes = data.jokes || [data];
+            console.log(jokes)
 
             jokes.forEach(joke => {
                 const card = document.createElement("div");
                 card.classList.add("joke-card");
-
+            
                 let content = '';
-
+            
                 if (joke.type === "twopart") {
                     content = `
                         <div class='book'>
@@ -42,8 +49,20 @@ function fetchAndRenderJokes(url) {
                 } else {
                     content = `<p>Tipo desconocido de chiste.</p>`;
                 }
-
+            
                 card.innerHTML = content;
+            
+                if (joke.type === "twopart") {
+                    const leftSide = card.querySelector('.side.left');
+                    console.log(joke)
+                    leftSide.addEventListener('click', () => goToJoke(joke));
+                }
+                
+                if (joke.type === "single") {
+                    const singleCard = card.querySelector('.page.one-side');
+                    singleCard.addEventListener('click', () => goToJoke(joke));
+                }                
+            
                 cardContainer.appendChild(card);
             });
         })
@@ -96,8 +115,6 @@ function revealDelivery(element) {
 
 function clearForm() {
     document.getElementById('searchForm').reset();
-    document.getElementById('resultsContainer').style.display = 'none';
-    updatePriceDisplay(100);
 }
 
 // Utilidad para manejar exclusión entre "Ninguna" y el resto

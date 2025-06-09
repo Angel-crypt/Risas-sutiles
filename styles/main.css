@@ -13,9 +13,10 @@
     --color-warning: #8d7d1f;
 
     /* Contraste  */
-    --color-bg-d: #D4C3AA;
+    --color-bg-d: #e7e1d8;
     --color-surface-d: #BDB59E;
     --color-primary-d: #06080A;
+    --color-primary-l: #5d81b3;
     --color-secondary-d: #15191D;
     --color-accent-d: #3A271D;
     --color-correct-d: #005716;
@@ -24,6 +25,7 @@
 
     /* Otros */
     --border-radius: 0.75rem;
+    --border: 1px solid var(--color-border);
     --font-family: 'Fira Code', monospace;
     --transition: 0.2s ease-in-out;
     --shadow: 4px 4px 8px #bdb59e86;
@@ -68,4 +70,25 @@ button {
     background-color: var(--color-surface-d);
     color: var(--color-text);
     border: none;
+}
+
+.logout-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.logout-button:hover {
+    background-color: var(--color-accent-d);
+    transform: scale(1.05);
 }
