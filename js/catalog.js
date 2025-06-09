@@ -36,6 +36,7 @@ document.getElementById("searchForm").addEventListener("submit", function (e) {
     if (blacklistFlags.length) url += `&blacklistFlags=${blacklistFlags.join(",")}`;
     if (jokeTypes.length === 1) url += `&type=${jokeTypes[0]}`;
 
+    console.log(url)
     // Llamar API y mostrar chistes
     fetch(url)
         .then(res => res.json())
