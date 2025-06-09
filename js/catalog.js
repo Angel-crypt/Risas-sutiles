@@ -3,41 +3,7 @@ if (sessionStorage.getItem('isLoggedIn') !== 'true') {
     window.location.href = '../index.html';
 }
 
-document.getElementById("searchForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Evita recargar la página
-
-    const form = new FormData(this);
-    const selectedCategories = [];
-    const blacklistFlags = [];
-    const jokeTypes = [];
-
-    // Recolectar categorías
-    document.querySelectorAll("input[name='categories']:checked").forEach(cb => {
-        if (cb.value !== 'any') selectedCategories.push(cb.value);
-    });
-    const categories = selectedCategories.length ? selectedCategories.join(",") : "Any";
-
-    // Recolectar blacklist
-    document.querySelectorAll("input[name='black-list']:checked").forEach(cb => {
-        if (cb.value !== 'any') blacklistFlags.push(cb.value);
-    });
-
-    // Recolectar tipos de chistes
-    document.querySelectorAll("input[name='joke-type']:checked").forEach(cb => {
-        jokeTypes.push(cb.value);
-    });
-
-    const lang = form.get("language");
-    const amount = form.get("amount") || 1;
-
-    // Construir URL base
-    let url = `https://v2.jokeapi.dev/joke/${categories}?lang=${lang}&amount=${amount}`;
-
-    if (blacklistFlags.length) url += `&blacklistFlags=${blacklistFlags.join(",")}`;
-    if (jokeTypes.length === 1) url += `&type=${jokeTypes[0]}`;
-
-    console.log(url)
-    // Llamar API y mostrar chistes
+function fetchAndRenderJokes(url) {
     fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -84,6 +50,43 @@ document.getElementById("searchForm").addEventListener("submit", function (e) {
         .catch(err => {
             alert("Ocurrió un error al obtener los chistes: " + err.message);
         });
+}
+
+document.getElementById("searchForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Evita recargar la página
+
+    const form = new FormData(this);
+    const selectedCategories = [];
+    const blacklistFlags = [];
+    const jokeTypes = [];
+
+    // Recolectar categorías
+    document.querySelectorAll("input[name='categories']:checked").forEach(cb => {
+        if (cb.value !== 'any') selectedCategories.push(cb.value);
+    });
+    const categories = selectedCategories.length ? selectedCategories.join(",") : "Any";
+
+    // Recolectar blacklist
+    document.querySelectorAll("input[name='black-list']:checked").forEach(cb => {
+        if (cb.value !== 'none') blacklistFlags.push(cb.value);
+    });
+
+    // Recolectar tipos de chistes
+    document.querySelectorAll("input[name='joke-type']:checked").forEach(cb => {
+        jokeTypes.push(cb.value);
+    });
+
+    const lang = form.get("language");
+    const amount = form.get("amount") || 10;
+
+    // Construir URL base
+    let url = `https://v2.jokeapi.dev/joke/${categories}?lang=${lang}&amount=${amount}`;
+
+    if (blacklistFlags.length) url += `&blacklistFlags=${blacklistFlags.join(",")}`;
+    if (jokeTypes.length === 1) url += `&type=${jokeTypes[0]}`;
+
+    console.log("Generated URL:", url);
+    fetchAndRenderJokes(url);
 });
 
 function revealDelivery(element) {
@@ -121,7 +124,10 @@ function setupExclusiveCheckboxes(noneId, groupName) {
     });
 }
 
+base_url = "https://v2.jokeapi.dev/joke/Any?lang=es&amount=10"
+
 document.addEventListener('DOMContentLoaded', () => {
+    fetchAndRenderJokes(base_url);
     setupExclusiveCheckboxes('cat-any', 'categories');
-    setupExclusiveCheckboxes('black-any', 'black-list');
+    setupExclusiveCheckboxes('black-none', 'black-list');
 });

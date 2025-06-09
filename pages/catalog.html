@@ -22,7 +22,7 @@
                     <div class="checkbox-group">
                         <div class="checkbox-item">
                             <input type="checkbox" id="cat-any" name="categories" value="any" checked>
-                            <label for="cat-any">Ninguna</label>
+                            <label for="cat-any">Todas</label>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="cat-programming" name="categories" value="programming">
@@ -58,8 +58,8 @@
                     <label class="form-label">Lista negra:</label>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="black-any" name="black-list" value="any" checked>
-                            <label for="black-any">Ninguna</label>
+                            <input type="checkbox" id="black-none" name="black-list" value="none" checked>
+                            <label for="black-none">Ninguna</label>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="black-nsfw" name="black-list" value="nsfw">
@@ -112,7 +112,7 @@
                             <label for="joke-single">Simple</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="joke-twopart" name="joke-type" value="twopart">
+                            <input type="checkbox" id="joke-twopart" name="joke-type" value="twopart" checked>
                             <label for="joke-twopart">Dos partes</label>
                         </div>
                 </div>
@@ -121,7 +121,7 @@
     
                 <div class="form-group">
                     <label class="form-label">Cantidad:</label>
-                    <input type="number" name="amount" id="amount" min="1" max="10" placeholder="1">
+                    <input type="number" name="amount" id="amount" min="1" max="10" placeholder="10">
                 </div>
     
                 <div class="form-separator"></div>
