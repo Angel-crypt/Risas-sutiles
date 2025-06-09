@@ -8,10 +8,135 @@
     <link rel="stylesheet" href="../styles/catalog.css">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
+<!-- Botón flotante de cerrar sesión -->
+<button class="logout-button" onclick="logout()" title="Cerrar sesión">
+    🚪
+</button>
 <body>
+    <header>
+        <div class="search-container">
+            <form class="search-form" id="searchForm">
+                <!-- Categorías -->
+                <div class="form-group">
+                    <label class="form-label">Categorías:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cat-any" name="categories" value="any" checked>
+                            <label for="cat-any">Ninguna</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cat-programming" name="categories" value="programming">
+                            <label for="cat-programming">Programación</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cat-misc" name="categories" value="misc">
+                            <label for="cat-misc">Varios</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cat-dark" name="categories" value="dark">
+                            <label for="cat-dark">Oscuro</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cat-pun" name="categories" value="pun">
+                            <label for="cat-pun">Juego de palabras</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cat-spooky" name="categories" value="spooky">
+                            <label for="cat-spooky">Espeluznante</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cat-christmas" name="categories" value="christmas">
+                            <label for="cat-christmas">Navidad</label>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-separator"></div>
+    
+                <!-- Lista negra de chistes -->
+                <div class="form-group">
+                    <label class="form-label">Lista negra:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="black-any" name="black-list" value="any" checked>
+                            <label for="black-any">Ninguna</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="black-nsfw" name="black-list" value="nsfw">
+                            <label for="black-nsfw">Inapropiado</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="black-religious" name="black-list" value="religious">
+                            <label for="black-religious">Religioso</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="black-political" name="black-list" value="political">
+                            <label for="black-political">Político</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="black-racist" name="black-list" value="racist">
+                            <label for="black-racist">Racista</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="black-sexist" name="black-list" value="sexist">
+                            <label for="black-sexist">Sexista</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="black-explicit" name="black-list" value="explicit">
+                            <label for="black-explicit">Explícito</label>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Lenguaje -->
+                <div class="form-group">
+                    <label class="form-label">Lenguaje:</label>
+                    <select name="language" id="language">
+                        <option value="es">Español</option>
+                        <option value="en">Inglés</option>
+                        <option value="cs">Checo</option>
+                        <option value="de">Alemán</option>
+                        <option value="fr">Francés</option>
+                        <option value="pt">Portugués</option>
+                    </select>
+                </div>
+    
+                <div class="form-separator"></div>
+    
+                <!-- Cantidad -->
+                <div class="form-group">
+                    <label class="form-label">Tipo de chiste:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="joke-single" name="joke-type" value="single" checked>
+                            <label for="joke-single">Simple</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="joke-two-part" name="joke-type" value="two-part">
+                            <label for="joke-two-part">Dos partes</label>
+                        </div>
+                </div>
+    
+                <div class="form-separator"></div>
+    
+                <div class="form-group">
+                    <label class="form-label">Cantidad:</label>
+                    <input type="number" name="amount" id="amount" min="1" max="10" placeholder="1">
+                </div>
+    
+                <div class="form-separator"></div>
+    
+                <!-- Botones -->
+                <button type="submit" class="search-button">Buscar</button>
+                <button type="button" class="clear-button" onclick="clearForm()">Limpiar</button>
+            </form>
+        </div>
+    </header>
     <main>
         <section id="joke-cards"></section>
     </main>
 </body>
+<script src="../js/search-bar.js"></script>
 <script src="../js/catalog.js"></script>
+<script src="../js/main.js"></script>
 </html>

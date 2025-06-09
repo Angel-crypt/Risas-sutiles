@@ -8,7 +8,7 @@
 }
 
 .joke-card {
-  width: 600px;
+  width: 100%;
   height: 300px;
 }
 
@@ -107,4 +107,145 @@ p {
   to {
     filter: blur(0);
   }
+}
+
+/*Barra de busqueda*/
+
+.search-container {
+    margin: 2rem;
+    padding: 1%;
+    box-shadow: var(--shadow);
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.checkbox-group, .radio-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.checkbox-item, .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.checkbox-item input, .radio-item input {
+    margin: 0;
+}
+
+.checkbox-item label, .radio-item label {
+    font-size: 14px;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+/* Select dropdown */
+select {
+    padding: 6px 12px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--color-bg);
+    font-size: 14px;
+    color: var(--color-text);
+    min-width: 120px;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: var(--shadow);
+}
+
+/* Input fields */
+input[type="text"], input[type="number"] {
+    padding: 6px 12px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--color-bg);
+    font-size: 14px;
+    color: var(--color-text);
+    min-width: 120px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    outline: none;
+    box-shadow: var(--shadow);
+}
+
+input[type="checkbox"] {
+    outline: none;
+    accent-color: var(--color-accent); /* Color personalizado */
+    transform: scale(1.2); /* Opcional: hacer más grande */
+  }
+
+/* Search button */
+.search-button {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.search-button:hover {
+    background: var(--color-secondary);
+}
+
+.clear-button {
+    background: var(--color-accent-d);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.clear-button:hover {
+    background: var(--color-accent);
+}
+
+.logout-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.logout-button:hover {
+    background-color: var(--color-accent-d);
+    transform: scale(1.05);
 }
