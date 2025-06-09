@@ -11,7 +11,7 @@ function logout() {
             title: 'custom-title',
             htmlContainer: 'custom-text',
             confirmButton: 'custom-success',
-            cancelButton: 'custom-cancel'
+            cancelButton: 'custom-error'
         }
     }).then((result) => {
         if (result.isConfirmed) {
