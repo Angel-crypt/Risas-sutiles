@@ -26,6 +26,8 @@
     --border-radius: 0.75rem;
     --font-family: 'Fira Code', monospace;
     --transition: 0.2s ease-in-out;
+    --shadow: 4px 4px 8px #bdb59e86;
+    --blur-bg: rgba(245, 240, 230, 0.4);
 }
 
 body {

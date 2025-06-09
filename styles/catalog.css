@@ -1,6 +1,110 @@
+#joke-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  padding: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
 .joke-card {
-    background-color: var(--color-surface-d);
-    border-radius: var(--border-radius, 12px);
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    font-family: 'Fira Code', monospace; }
+  width: 600px;
+  height: 300px;
+}
+
+p {
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.single, .book {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-main);
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.page.one-side {
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.left {
+  border-right: 1px solid #ccc;
+  background: var(--color-surface);
+  padding: 1rem;
+  
+}
+
+.right {
+  background: var(--color-surface);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/*Ocultar y mostrar la segunda parte*/
+
+.right.blurred::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  background-color: var(--blur-bg);
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.right.blurred.revealed::before {
+  backdrop-filter: blur(0);
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.revealed {
+  animation: unblur 0.4s ease-out forwards;
+  position: relative;
+}
+
+.revealed::after {
+  display: none;
+}
+
+@keyframes unblur {
+  from {
+    filter: blur(6px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
