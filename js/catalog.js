@@ -17,7 +17,6 @@ function fetchAndRenderJokes(url) {
             cardContainer.innerHTML = '';
 
             const jokes = data.jokes || [data];
-            console.log(jokes)
 
             jokes.forEach(joke => {
                 const card = document.createElement("div");
@@ -54,7 +53,6 @@ function fetchAndRenderJokes(url) {
             
                 if (joke.type === "twopart") {
                     const leftSide = card.querySelector('.side.left');
-                    console.log(joke)
                     leftSide.addEventListener('click', () => goToJoke(joke));
                 }
                 
@@ -104,7 +102,6 @@ document.getElementById("searchForm").addEventListener("submit", function (e) {
     if (blacklistFlags.length) url += `&blacklistFlags=${blacklistFlags.join(",")}`;
     if (jokeTypes.length === 1) url += `&type=${jokeTypes[0]}`;
 
-    console.log("Generated URL:", url);
     fetchAndRenderJokes(url);
 });
 

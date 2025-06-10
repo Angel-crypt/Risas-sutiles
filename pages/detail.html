@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/swal-custom.css">
     <link rel="stylesheet" href="../styles/detail.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <button class="logout-button" onclick="logout()" title="Cerrar sesión">
     🚪
 </button>
 <body>
-    <div class="container">
+    <header>
         <!-- Header -->
         <div class="header">
             <div class="breadcrumb">
@@ -24,7 +25,8 @@
                 Tipo: <span class="type-badge" id="jokeType"></span>
             </div>
         </div>
-
+    </header>
+    <section class="container">
         <!-- Joke Content -->
         <div class="joke-content" id="trigger">
             <div class="joke-text" id="jokeText">
@@ -64,9 +66,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <div id="footer"></div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/detail.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/components_render.js"></script>
 </html>

@@ -1,0 +1,78 @@
+/* Footer principal */
+.custom-footer {
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+    padding: 40px 20px;
+    border-top: 2px solid var(--color-border);
+}
+
+/* Contenedor general */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Sección individual */
+.footer-section {
+    flex: 1 1 250px;
+    min-width: 200px;
+}
+
+/* Títulos */
+.footer-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-subtitle {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-secundary);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* Texto común */
+.footer-text {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* Lista de enlaces */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-accent);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent-d);
+}
+
+/* Parte inferior */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: var(--color-secundary);
+    margin-top: 20px;
+}
